@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Silvia Pipponzi — Danza, Yoga, Movimento</title>
+<meta name="description" content="Silvia Pipponzi, danzatrice e insegnante di Yoga. Lezioni di Vinyasa, Yin, Yoga in gravidanza e per la terza età tra Fermo, Porto San Giorgio e Falerone. Progetti di danza contemporanea e Dance Well.">
+<link rel="icon" href="img/logo-sole.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF8F3; --sand:#F1EAE0; --sand-2:#E6DBCC;
+  --ink:#1F1B17; --ink-soft:#4A423A; --muted:#7A6F63;
+  --clay:#B4533A; --clay-soft:#E9C9BC; --sage:#77836B;
+  --line:rgba(31,27,23,.12);
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Jost",system-ui,sans-serif;
+  --r:4px; --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--paper);color:var(--ink);font:300 17px/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(2.4rem,5vw,3.8rem)}
+h3{font-size:1.9rem}
+em{font-style:italic;color:var(--clay)}
+.eyebrow{font:500 .75rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--clay);display:inline-flex;align-items:center;gap:.8em}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.lead{font-size:1.15rem;color:var(--ink-soft);max-width:60ch}
+.btn{display:inline-flex;align-items:center;gap:.6em;font:500 .82rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:1.05em 1.8em;border-radius:40px;border:1px solid var(--ink);transition:.35s ease}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.fill{background:var(--clay);border-color:var(--clay);color:#fff}
+.btn.fill:hover{background:var(--ink);border-color:var(--ink)}
+.btn.light{border-color:rgba(255,255,255,.6);color:#fff}
+.btn.light:hover{background:#fff;color:var(--ink)}
+.link{font:500 .8rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:.35em;transition:color .3s}
+.link:hover{color:var(--clay)}
+section{padding:120px 0}
+.orn{display:block;width:12px;height:12px;border-radius:50%;background:var(--clay);margin-bottom:18px;font-size:0}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s}
+@media (min-width:981px){header:not(.solid) .nav ul a{color:#fff}}
+header.solid{background:rgba(251,248,243,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--serif);font-size:1.45rem;letter-spacing:.01em}
+.brand img{width:22px;height:auto}
+.nav ul{display:flex;gap:34px;list-style:none}
+.nav ul a{text-decoration:none;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400;position:relative}
+.nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:1px;background:var(--clay);transition:right .35s}
+.nav ul a:hover::after{right:0}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer;position:relative}
+.burger span,.burger span::before,.burger span::after{position:absolute;left:8px;right:8px;height:1px;background:var(--ink);content:"";transition:.3s}
+.burger span{top:20px}.burger span::before{top:-7px;left:0;right:0}.burger span::after{top:7px;left:0;right:0}
+.open .burger span{background:transparent}.open .burger span::before{top:0;transform:rotate(45deg)}.open .burger span::after{top:0;transform:rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;padding:0;background:var(--sand)}
+.hero-text{display:flex;flex-direction:column;justify-content:center;padding:140px 7vw 80px max(24px,calc((100vw - var(--max))/2 + 24px))}
+.hero h1{font-size:clamp(3.2rem,7.2vw,6.6rem);margin:28px 0 30px}
+.hero h1 span{display:block}
+.hero h1 .s{font-size:.5em;letter-spacing:.02em;margin-top:.35em}
+.hero h1 .i{font-style:italic;color:var(--clay);padding-left:.9em}
+.hero .lead{margin-bottom:44px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-img{position:relative;background:#0c0b0a;overflow:hidden}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%;animation:breathe 14s ease-in-out infinite alternate}
+@keyframes breathe{from{transform:scale(1)}to{transform:scale(1.05)}}
+.hero-img .cap{position:absolute;left:28px;bottom:26px;color:rgba(255,255,255,.75);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.sun{position:absolute;left:calc(52.5% - 64px);bottom:14%;width:128px;height:128px;border-radius:50%;background:var(--clay);opacity:.92;z-index:2;animation:float 9s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(18px)}}
+
+/* paths */
+.paths{background:var(--paper)}
+.intro{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:end;margin-bottom:80px}
+.intro p{font-family:var(--serif);font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.35;color:var(--ink-soft)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{text-decoration:none;display:block}
+.card .ph{aspect-ratio:3/4;overflow:hidden;border-radius:var(--r);margin-bottom:24px}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.card:hover img{transform:scale(1.06)}
+.card .n{font-family:var(--serif);font-style:italic;color:var(--clay);font-size:1.1rem}
+.card h3{margin:6px 0 10px}
+.card p{color:var(--ink-soft);font-size:.98rem;margin-bottom:16px}
+
+/* bio */
+.bio{background:var(--sand)}
+.bio-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:start}
+.bio-photos{position:sticky;top:110px}
+.bio-photos .a{aspect-ratio:4/5;object-fit:cover;width:82%;border-radius:var(--r)}
+.bio-photos .b{width:52%;aspect-ratio:1;object-fit:cover;border-radius:var(--r);margin:-26% 0 0 auto;border:10px solid var(--sand)}
+.bio h2{margin:22px 0 34px}
+.bio p{margin-bottom:1.2em;color:var(--ink-soft)}
+.quote{font-family:var(--serif);font-style:italic;font-size:1.7rem;line-height:1.35;color:var(--ink);border-left:1px solid var(--clay);padding-left:28px;margin:44px 0}
+.timeline{list-style:none;margin-top:50px;border-top:1px solid var(--line)}
+.timeline li{display:grid;grid-template-columns:90px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);font-size:.97rem}
+.timeline b{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--clay);line-height:1.2}
+
+/* yoga */
+.yoga-head{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:end;margin-bottom:60px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chips span{border:1px solid var(--line);border-radius:30px;padding:.5em 1.1em;font-size:.85rem;background:#fff}
+.yoga-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:28px}
+.yoga-photo{border-radius:var(--r);overflow:hidden;min-height:420px}
+.yoga-photo img{width:100%;height:100%;object-fit:cover}
+.schedule{background:var(--sand);border-radius:var(--r);padding:48px}
+.schedule h3{margin-bottom:6px}
+.schedule>p{color:var(--muted);font-size:.92rem;margin-bottom:26px}
+.place{padding:20px 0;border-top:1px solid var(--line)}
+.place h4{font:500 .78rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px;color:var(--clay)}
+.slot{display:flex;justify-content:space-between;gap:16px;font-size:.98rem;padding:3px 0}
+.slot span:last-child{font-family:var(--serif);font-size:1.2rem;white-space:nowrap}
+.schedule .btn{margin-top:26px}
+.yoga-note{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.note{padding:36px;border:1px solid var(--line);border-radius:var(--r);background:#fff}
+.note h3{font-size:1.6rem;margin-bottom:12px}
+.note p{color:var(--ink-soft);font-size:.96rem;margin-bottom:14px}
+.senior{display:grid;grid-template-columns:1fr 1fr;margin-top:28px;border-radius:var(--r);overflow:hidden;background:var(--sage);color:#fff}
+.senior img{width:100%;height:100%;object-fit:cover;min-height:420px}
+.senior div{padding:60px}
+.senior .eyebrow{color:#F3E6D8}
+.senior h3{font-size:2.6rem;margin:18px 0 18px}
+.senior p{opacity:.92;margin-bottom:1em}
+.senior .when{font-family:var(--serif);font-size:1.5rem;line-height:1.35;margin:26px 0 30px;border-top:1px solid rgba(255,255,255,.3);padding-top:22px;opacity:1}
+
+/* danza */
+.dance{background:#171411;color:#EDE6DC}
+.dance .eyebrow{color:#E08B6F}
+.dance em{color:#E08B6F}
+.dance-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:70px;align-items:end}
+.dance-head p{color:#B9AFA3}
+.works{display:grid;grid-template-columns:repeat(12,1fr);gap:26px}
+.work{grid-column:span 4;display:flex;flex-direction:column}
+.work.big{grid-column:span 6}
+.work .ph{overflow:hidden;border-radius:var(--r);aspect-ratio:4/5;background:#000;margin-bottom:18px}
+.work.big .ph{aspect-ratio:5/4}
+.work img{width:100%;height:100%;object-fit:cover;filter:grayscale(.25);transition:transform 1.2s cubic-bezier(.2,.7,.2,1),filter .6s}
+.work:hover img{transform:scale(1.05);filter:none}
+.work .meta{display:flex;justify-content:space-between;gap:12px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#9C9186;margin-bottom:6px}
+.work h3{font-size:2rem;color:#fff;margin-bottom:10px}
+.work p{color:#B9AFA3;font-size:.95rem}
+details{margin-top:10px}
+summary{cursor:pointer;list-style:none;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:#E08B6F}
+summary::-webkit-details-marker{display:none}
+summary::after{content:" +"}
+details[open] summary::after{content:" −"}
+details p{margin-top:10px}
+.watch{display:inline-block;margin-top:12px;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:#fff;text-decoration:none;border-bottom:1px solid #E08B6F;padding-bottom:3px}
+.archive{margin-top:90px;display:grid;grid-template-columns:1fr 2fr;gap:80px}
+.archive ul{list-style:none;columns:2;column-gap:40px}
+.archive li{break-inside:avoid;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.archive li b{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:#fff;display:block}
+.archive li span{font-size:.85rem;color:#9C9186}
+.cv{margin-top:26px;color:#B9AFA3;font-size:.95rem}
+.cv p{margin-bottom:1em}
+
+/* dance well */
+.dw-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+.dw-photos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.dw-photos img{border-radius:var(--r);width:100%;height:100%;object-fit:cover}
+.dw-photos .tall{grid-row:span 2}
+.dw-photos .sq{aspect-ratio:1}
+.dw h2{margin:22px 0 28px}
+.dw p{color:var(--ink-soft);margin-bottom:1.1em}
+.dw .classes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0}
+.dw .classes div{background:var(--sand);padding:22px;border-radius:var(--r)}
+.dw .classes b{display:block;font-family:var(--serif);font-weight:500;font-size:1.5rem}
+.dw .classes span{font-size:.9rem;color:var(--muted)}
+.small{font-size:.85rem!important;color:var(--muted)!important}
+
+/* band */
+.band{padding:0;height:62vh;min-height:380px;position:relative;overflow:hidden;display:grid;place-items:center;text-align:center;color:#fff}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62)}
+.band blockquote{position:relative;font-family:var(--serif);font-style:italic;font-size:clamp(2rem,4.5vw,3.6rem);line-height:1.15;max-width:18ch;padding:0 24px}
+.band cite{display:block;margin-top:22px;font:400 .75rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;font-style:normal;opacity:.8}
+
+/* contact */
+.contact{background:var(--sand)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:90px}
+.contact h2{margin:22px 0 26px}
+.contact dl{margin-top:40px}
+.contact dt{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:22px}
+.contact dd{font-family:var(--serif);font-size:1.55rem}
+.contact dd a{text-decoration:none}
+.contact dd a:hover{color:var(--clay)}
+.social{display:flex;gap:12px;margin-top:34px}
+.social a{width:46px;height:46px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;transition:.3s}
+.social a:hover{background:var(--ink);color:var(--paper)}
+.social svg{width:18px;height:18px;fill:currentColor}
+form{background:var(--paper);padding:48px;border-radius:var(--r)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+label{display:block;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+input,select,textarea{display:block;width:100%;margin-top:8px;font:300 1.05rem var(--sans);color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 0;outline:none;transition:border-color .3s;border-radius:0}
+input:focus,select:focus,textarea:focus{border-color:var(--clay)}
+textarea{resize:vertical;min-height:110px}
+form .btn{margin-top:8px;cursor:pointer}
+
+footer{background:var(--ink);color:#A79C90;padding:50px 0;font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .brand{color:#fff;font-size:1.3rem}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+/* responsive */
+@media (max-width:980px){
+  section{padding:90px 0}
+  .nav ul{position:fixed;inset:76px 0 auto;flex-direction:column;gap:0;background:var(--paper);padding:10px 24px 24px;box-shadow:0 10px 30px rgba(0,0,0,.08);transform:translateY(-120%);transition:transform .45s ease;z-index:-1}
+  .nav ul li{border-bottom:1px solid var(--line)}
+  .nav ul a{display:block;padding:18px 0}
+  .open .nav ul{transform:none}
+  header.open{background:var(--paper)}
+  .burger{display:block}
+  .hero{grid-template-columns:1fr}
+  .hero-text{padding:120px 24px 60px}
+  .hero-img{height:78vh}
+  .sun{display:none}
+  .intro,.bio-grid,.yoga-head,.yoga-grid,.dance-head,.dw-grid,.contact-grid,.archive,.senior{grid-template-columns:1fr;gap:44px}
+  .cards,.yoga-note{grid-template-columns:1fr}
+  .bio-photos{position:static}
+  .works{grid-template-columns:minmax(0,1fr);gap:50px}
+  .works>*{min-width:0}
+  .work,.work.big{grid-column:auto}
+  .card .ph{aspect-ratio:4/3}
+  .archive ul{columns:1}
+  .senior div,.schedule,form{padding:34px 26px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .row,.dw .classes{grid-template-columns:1fr}
+  .timeline li{grid-template-columns:64px 1fr}
+  .hero h1 .s{font-size:.5em;letter-spacing:.02em;margin-top:.35em}
+.hero h1 .i{padding-left:0}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="img/logo-sole.png" alt="">Silvia Pipponzi</a>
+    <ul id="menu">
+      <li><a href="#bio">Bio</a></li>
+      <li><a href="#yoga">Yoga</a></li>
+      <li><a href="#danza">Danza</a></li>
+      <li><a href="#dance-well">Dance Well</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+    <button class="burger" aria-label="Apri il menu" aria-controls="menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <span class="eyebrow rv">Danza · Yoga · Movimento</span>
+    <h1 class="rv"><span>Danzatrice,</span><span class="i">Yogini</span><span class="s">&amp; Movement Explorer</span></h1>
+    <p class="lead rv">Sono Silvia. Danza e Yoga, per me, sono vie di esplorazione e di guarigione: strumenti per connettersi profondamente con se stessi e con gli altri.</p>
+    <div class="ctas rv">
+      <a class="btn fill" href="#contatti">Prenota una lezione di prova</a>
+      <a class="btn" href="#danza">I progetti di danza</a>
+    </div>
+  </div>
+  <div class="sun" aria-hidden="true"></div>
+  <div class="hero-img">
+    <img src="img/hero-silvia.jpg" alt="Ritratto in bianco e nero di Silvia Pipponzi mentre danza">
+    <span class="cap">Fermo · Porto San Giorgio · Marche</span>
+  </div>
+</section>
+
+<!-- TRE VIE -->
+<section class="paths">
+  <div class="wrap">
+    <div class="intro">
+      <div class="rv"><span class="eyebrow">Tre vie, un solo corpo</span><h2 style="margin-top:22px">Il movimento <em>come ascolto</em></h2></div>
+      <p class="rv">Credo che il movimento sia fondamentale per una vita equilibrata e armoniosa. Lo porto in sala, in scena e nei luoghi di cura.</p>
+    </div>
+    <div class="cards">
+      <a class="card rv" href="#yoga">
+        <div class="ph"><img src="img/yoga-prato.jpg" alt="Silvia pratica yoga su un prato al tramonto" loading="lazy"></div>
+        <span class="n">i.</span><h3>Yoga</h3>
+        <p>Lezioni per tutti i livelli: asana, respiro e un lungo rilassamento finale, per far stare bene corpo e mente.</p>
+        <span class="link">Orari e lezioni</span>
+      </a>
+      <a class="card rv" href="#danza">
+        <div class="ph"><img src="img/danza-1.jpg" alt="Silvia danza in scena con una luce radente" loading="lazy" style="object-position:30% center"></div>
+        <span class="n">ii.</span><h3>Dance Projects</h3>
+        <p>Dialoghi e riflessioni sul nostro tempo, per un impegno creativo che illumini e trasformi.</p>
+        <span class="link">Scopri i progetti</span>
+      </a>
+      <a class="card rv" href="#dance-well">
+        <div class="ph"><img src="img/dancewell-1.jpg" alt="Due partecipanti di Dance Well danzano insieme" loading="lazy"></div>
+        <span class="n">iii.</span><h3>Dance Well</h3>
+        <p>Ricerca e movimento per il Parkinson: la danza nei musei e negli spazi dell'arte, aperta a tutti.</p>
+        <span class="link">Il progetto</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section class="bio" id="bio">
+  <div class="wrap bio-grid">
+    <div class="bio-photos rv">
+      <img class="a" src="img/bio-silvia.jpg" alt="Silvia sorride seduta su una poltrona in vimini tra le piante" loading="lazy" style="object-position:55% center">
+      <img class="b" src="img/yoga-mare.jpg" alt="Silvia in posizione di yoga sulla spiaggia" loading="lazy">
+    </div>
+    <div>
+      <span class="eyebrow rv">Bio</span>
+      <h2 class="rv">Un viaggio iniziato <em>a quattro anni</em></h2>
+      <p class="rv">La mia vita è un viaggio cominciato con la danza, un percorso che mi ha portata a laurearmi in Danza Contemporanea all'Accademia Nazionale di Danza di Roma. Per me la danza è una forma di comunicazione intensa: un modo per esprimere le emozioni e liberarsi delle tensioni attraverso il movimento.</p>
+      <p class="rv">L'incontro con lo Yoga ha arricchito questo percorso, aprendomi a una nuova consapevolezza del corpo e della mente. Mi ha portata fino a Bali, dove ho approfondito la pratica e sono diventata insegnante certificata Yoga Alliance. Mi sono specializzata in Yoga per bambini e adolescenti, Yin, Yoga in gravidanza e post parto.</p>
+      <p class="quote rv">«Ogni giorno vedo come la danza e lo yoga possano essere fonti di benessere e di libertà.»</p>
+      <p class="rv">Il mio impegno va oltre la pratica personale: condivido la passione per il movimento insegnando alle persone con Parkinson nel progetto Dance Well.</p>
+      <ul class="timeline rv">
+        <li><b>2015</b><span>Diploma Accademico in Danza Contemporanea, Accademia Nazionale di Danza di Roma</span></li>
+        <li><b>Israele</b><span>Dance Journey della Kibbutz Contemporary Dance Company e tecnica Gaga alla Batsheva Dance Company</span></li>
+        <li><b>2018</b><span>Certificazione Yoga Alliance al Santosha Yoga Institute di Bali, Indonesia</span></li>
+        <li><b>USA</b><span>Medicina Cinese, Tai-Chi e Qi-Gong all'Oriental Fitness Institute di Filadelfia</span></li>
+        <li><b>Oggi</b><span>Lezioni di Yoga nelle Marche, creazioni di danza, insegnante Dance Well</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- YOGA -->
+<section class="yoga" id="yoga">
+  <div class="wrap">
+    <div class="yoga-head">
+      <div>
+        <span class="eyebrow rv">Yoga</span>
+        <h2 class="rv" style="margin-top:22px">Un ascolto profondo <em>delle sensazioni</em> del corpo</h2>
+        <div class="chips rv"><span>Vinyasa Yoga</span><span>Yin Yoga</span><span>Yoga in gravidanza</span><span>Yoga per bambini</span><span>Yoga per la terza età</span></div>
+      </div>
+      <p class="lead rv">Mi sono avvicinata allo Yoga per superare alcuni infortuni negli anni dell'Accademia. La mia pratica è influenzata dal legame con la danza e dagli studi di Medicina Cinese, Tai-Chi e Qi-Gong: movimento attento, consapevole, adatto a principianti e a praticanti esperti.</p>
+    </div>
+
+    <div class="yoga-grid">
+      <div class="yoga-photo rv"><img src="img/yoga-lezione.jpg" alt="Silvia guida una lezione di yoga all'aperto" loading="lazy"></div>
+      <div class="schedule rv">
+        <h3>Orari delle lezioni</h3>
+        <p>Asana, respirazione e rilassamento finale. La prima lezione è di prova.</p>
+        <div class="place"><h4>Fermo</h4>
+          <div class="slot"><span>Lunedì · Mercoledì · Venerdì</span><span>19:00 – 20:00</span></div>
+        </div>
+        <div class="place"><h4>Porto San Giorgio</h4>
+          <div class="slot"><span>Martedì</span><span>9:00 – 10:00</span></div>
+          <div class="slot"><span>Venerdì</span><span>8:00 – 9:00</span></div>
+        </div>
+        <div class="place"><h4>Falerone</h4>
+          <div class="slot"><span>Martedì</span><span>19:00 – 20:00</span></div>
+          <div class="slot"><span>Giovedì</span><span>18:30 – 19:30</span></div>
+        </div>
+        <a class="btn fill" href="#contatti">Prenota la lezione di prova</a>
+      </div>
+    </div>
+
+    <div class="senior rv">
+      <img src="img/yoga-terza-eta.jpg" alt="Lezione di yoga sulla sedia per persone over 60" loading="lazy">
+      <div>
+        <span class="eyebrow">Novità</span>
+        <h3>Yoga per la terza età</h3>
+        <p>Uno spazio gentile e accogliente per le persone over 60 che desiderano muoversi con consapevolezza, migliorare equilibrio, respiro e benessere generale.</p>
+        <p>Si pratica con il supporto della sedia: ogni movimento è accessibile, sicuro e adatto a ogni livello di mobilità. Esercizi dolci, ascolto e rilassamento per coltivare presenza, vitalità e fiducia nel corpo.</p>
+        <p class="when">Dal 15 settembre<br>martedì e venerdì, 10:30 – 11:30<br>Villa Om, Porto San Giorgio</p>
+        <a class="btn light" href="tel:+393398715961">Prenota · 339 871 5961</a>
+      </div>
+    </div>
+
+    <div class="yoga-note" style="margin-top:28px">
+      <div class="note rv">
+        <span class="orn">✺</span>
+        <h3>Pratiche online gratuite</h3>
+        <p>Sequenze da seguire a casa, al tuo ritmo, sul canale YouTube.</p>
+        <a class="link" href="https://www.youtube.com/channel/UC1fgyhkMS2zAE4iYc6YaPeQ" target="_blank" rel="noopener">Vai al canale</a>
+      </div>
+      <div class="note rv">
+        <span class="orn">✺</span>
+        <h3>Yoga per bambini</h3>
+        <p>Gioco, respiro e movimento per bambini e adolescenti. Scrivimi per percorsi nelle scuole e nei centri estivi.</p>
+        <a class="link" href="#contatti">Chiedi informazioni</a>
+      </div>
+      <div class="note rv">
+        <span class="orn">✺</span>
+        <h3>Santosha, Bali</h3>
+        <p>La mia esperienza di formazione al Santosha Yoga Institute, raccontata in un articolo.</p>
+        <a class="link" href="https://www.thebrokebackpacker.com/santosha-yoga-teacher-training-bali/" target="_blank" rel="noopener">Leggi l'articolo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<section class="band">
+  <img src="img/bhalavati.jpg" alt="" loading="lazy">
+  <blockquote class="rv">Tutti veniamo al mondo per danzare.<cite>da «Bhalavati», 2018</cite></blockquote>
+</section>
+
+<!-- DANZA -->
+<section class="dance" id="danza">
+  <div class="wrap">
+    <div class="dance-head">
+      <div>
+        <span class="eyebrow rv">Dance Projects · Portfolio</span>
+        <h2 class="rv" style="margin-top:22px">Il corpo come <em>archivio</em> di memorie e possibilità</h2>
+      </div>
+      <p class="rv">Attraverso la danza cerco dialoghi profondi e riflessioni sul nostro tempo. Creazioni proprie, collaborazioni con coreografi e compagnie in Italia, Israele, Stati Uniti e Olanda.</p>
+    </div>
+
+    <div class="works">
+      <article class="work big rv">
+        <div class="ph"><img src="img/concerto-4-battiti.jpg" alt="Performer in scena nel buio durante Concerto per 4 battiti" loading="lazy"></div>
+        <div class="meta"><span>2026</span><span>Valle Cascia di Montecassiano</span></div>
+        <h3>Concerto per 4 battiti</h3>
+        <p>Una performance sonora di Marzio Zorio: quattro performer diffondono in tempo reale il proprio battito cardiaco, e ogni respiro, movimento o quiete cambia il paesaggio sonoro.</p>
+        <details><summary>Leggi di più</summary><p>I ritmi individuali si sovrappongono senza partitura, dando vita a una composizione viva e imprevedibile. Lo spazio diventa un luogo di ascolto condiviso, dove il confine tra interno ed esterno, individuo e ambiente, si dissolve nella vibrazione. Festival I Fumi della Fornace.</p></details>
+      </article>
+      <article class="work big rv">
+        <div class="ph"><img src="img/who-am-i-2025.jpg" alt="Danzatrice avvolta nel fumo di scena, Who Am I" loading="lazy" style="object-position:center 40%"></div>
+        <div class="meta"><span>2025</span><span>Gargnano sul Garda</span></div>
+        <h3>Who Am I</h3>
+        <p>Un'esplorazione danzata dell'identità e del corpo come archivio di memorie e possibilità, tra vulnerabilità e forza.</p>
+        <details><summary>Leggi di più</summary><p>Chi siamo quando ci muoviamo, quando amiamo, quando ci lasciamo vedere dall'altro? La scena diventa uno spazio di ricerca, materia viva plasmata dalla musica e dal silenzio: un viaggio che non offre risposte definitive, ma invita ad abitare la bellezza della domanda.</p></details>
+      </article>
+      <article class="work rv">
+        <div class="ph"><img src="img/maneggiami.jpg" alt="Silvia con un velo color rame in Maneggiami con cura" loading="lazy"></div>
+        <div class="meta"><span>2024</span><span>Villa di Massenzio, Roma</span></div>
+        <h3>Maneggiami con cura</h3>
+        <p>Coreografia e danza di Silvia Pipponzi, ispirata a «Sii dolce con me» di Mariangela Gualtieri.</p>
+        <details><summary>Leggi di più</summary><p>La performance esplora il delicato equilibrio tra fragilità e violenza e la nostalgia di una tenerezza che, dopo la morte, non potremo più sperimentare. Ogni movimento incarna il desiderio di essere trattati con cura e rispetto. Coordinamento di Sandra Fuciarelli – Collettivo ParoleCheDanzano.</p></details>
+      </article>
+      <article class="work rv">
+        <div class="ph"><img src="img/venus-mars.jpg" alt="Due danzatori in bianco e nero, Venus &amp; Mars" loading="lazy" style="object-position:60% center"></div>
+        <div class="meta"><span>2024</span><span>Gargnano sul Garda</span></div>
+        <h3>Venus &amp; Mars</h3>
+        <p>Le energie contrastanti e complementari di Venere e Marte: amore e conflitto, bellezza e potere.</p>
+        <details><summary>Leggi di più</summary><p>Venere rappresenta la femminilità, l'amore e la bellezza; Marte la forza e l'azione. Un messaggio universale di unità nella dualità, che invita ad armonizzare le forze opposte dentro di sé e nel mondo.</p></details>
+      </article>
+      <article class="work rv">
+        <div class="ph"><img src="img/who-am-i-2023.jpg" alt="Una figura sotto un velo controluce" loading="lazy"></div>
+        <div class="meta"><span>2023</span><span>Gargnano sul Garda</span></div>
+        <h3>who am I</h3>
+        <p>Il corpo è come argilla, plasmato dalle esperienze, dai pensieri e dalle emozioni che ci attraversano.</p>
+        <a class="watch" href="https://www.youtube.com/watch?v=_eHW2mbiUvg" target="_blank" rel="noopener">▶ Guarda il trailer</a>
+      </article>
+      <article class="work rv">
+        <div class="ph"><img src="img/vinculum.jpg" alt="Due volti coperti da fili intrecciati, Vinculum" loading="lazy"></div>
+        <div class="meta"><span>2022</span><span>Palazzo Bettoni, Gargnano</span></div>
+        <h3>Vinculum</h3>
+        <p>Due corpi con i volti coperti, attraversati dalla stessa energia ma incapaci di comunicare: la ricerca di un legame.</p>
+      </article>
+      <article class="work rv">
+        <div class="ph"><img src="img/mater.jpg" alt="Danzatrice in scena, Mater" loading="lazy"></div>
+        <div class="meta"><span>2021</span><span>Kibbutz Ga'aton, Israele</span></div>
+        <h3>Mater</h3>
+        <p>Sullo Stabat Mater di Pergolesi. Tre voci, un'unica scena: il dolore di una madre.</p>
+        <a class="watch" href="https://www.youtube.com/watch?v=vAXNCfHFWBk" target="_blank" rel="noopener">▶ Guarda il video</a>
+      </article>
+      <article class="work rv">
+        <div class="ph"><img src="img/exhibit.jpg" alt="Danzatrice in abito azzurro in una galleria bianca, Exhibit" loading="lazy"></div>
+        <div class="meta"><span>2017</span><span>Highs&amp;Lows 4 BID, Amsterdam</span></div>
+        <h3>Exhibit</h3>
+        <p>Dalla «malafede» di Sartre e de Beauvoir: quando le pressioni sociali ci fanno rinnegare la nostra libertà. Coreografia di Monica Sharon.</p>
+        <a class="watch" href="https://www.youtube.com/watch?v=kkM8LMD4i1g" target="_blank" rel="noopener">▶ Guarda il trailer</a>
+      </article>
+    </div>
+
+    <div class="archive">
+      <div>
+        <span class="eyebrow rv">Altri lavori</span>
+        <div class="cv rv">
+          <p>Dopo l'Accademia, dove ha interpretato PSALM di José Limón con il supporto della Limón Foundation, Silvia è stata tirocinante al Budapest Dance Theatre e ha vissuto due anni in Israele, danzando per Rami Be'er, Noa Zuk, Vertigo Dance Company e altri.</p>
+          <p>Ha danzato con la Kim Robards Dance Company di Denver in una tournée di oltre quaranta teatri. Dal 2021 collabora con Mattia Raggi nelle stagioni estive di Toscolano Maderno e Gargnano sul Garda.</p>
+        </div>
+      </div>
+      <ul class="rv">
+        <li><b>Hamlet</b><span>2019 · Campo Ippico, Toscolano Maderno</span></li>
+        <li><b>IN&gt;SEGUIMI</b><span>2019 · con Sandra Fuciarelli, MACRO Roma</span></li>
+        <li><b>2000 miles</b><span>2021 · Compagnie Ballet 21, Saint-Étienne</span></li>
+        <li><b>Vacuum</b><span>2021 · video con Ralph Cope e Francesco Concetti</span></li>
+        <li><b>Bhalavati</b><span>2018 · Collettivo 33, Altidona</span></li>
+        <li><b>Body Architecture</b><span>2017 · Venezia e Cisterne Romane, Fermo</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DANCE WELL -->
+<section class="dw" id="dance-well">
+  <div class="wrap dw-grid">
+    <div class="dw-photos rv">
+      <img class="tall" src="img/dancewell-2.jpg" alt="Una classe Dance Well danza in cerchio in un parco" loading="lazy">
+      <img class="sq" src="img/dancewell-1.jpg" alt="Due partecipanti si tengono per mano danzando" loading="lazy">
+      <img class="sq" src="img/dancewell-3.jpg" alt="Classe Dance Well in una sala affrescata" loading="lazy">
+    </div>
+    <div>
+      <span class="eyebrow rv">Dance Well</span>
+      <h2 class="rv">Ricerca e movimento <em>per il Parkinson</em></h2>
+      <p class="rv">Dance Well porta la danza nei musei e negli spazi dell'arte e si rivolge principalmente, ma non solo, alle persone che vivono con il Parkinson o con altri disturbi del movimento.</p>
+      <p class="rv">Il progetto sostiene danzatori e organizzazioni che lavorano con queste persone, perché possano contribuire con approcci innovativi al benessere e alla coesione sociale delle loro comunità.</p>
+      <div class="classes rv">
+        <div><b>Ascoli Piceno</b><span>ogni mercoledì, ore 11:00</span></div>
+        <div><b>Pesaro</b><span>ogni lunedì, ore 10:00</span></div>
+      </div>
+      <p class="small rv">Guidato dal Comune di Bassano del Grappa con partner europei, sostenuto dal Programma Europa Creativa dell'Unione Europea.</p>
+      <a class="link rv" href="https://www.dancewell.eu/it/" target="_blank" rel="noopener">Scopri il progetto</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<section class="contact" id="contatti">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow rv">Contatti</span>
+      <h2 class="rv">Parliamone <em>insieme</em></h2>
+      <p class="lead rv">Per una lezione di prova, un percorso di Yoga o una collaborazione artistica, scrivimi: rispondo volentieri.</p>
+      <dl class="rv">
+        <dt>Email</dt><dd><a href="mailto:s.pipponzi15@gmail.com">s.pipponzi15@gmail.com</a></dd>
+        <dt>Telefono</dt><dd><a href="tel:+393398715961">339 871 5961</a></dd>
+      </dl>
+      <div class="social rv">
+        <a href="https://www.instagram.com/sylviaisa/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.2.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.8a1.4 1.4 0 100 2.9 1.4 1.4 0 000-2.9z"/></svg></a>
+        <a href="https://www.facebook.com/yogaconsilvia" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.6l.4-4h-4V6.3c0-1 .2-1.3 1.1-1.3H18V0h-3.8C10.6 0 9 1.6 9 4.6V8z"/></svg></a>
+        <a href="https://www.youtube.com/channel/UC1fgyhkMS2zAE4iYc6YaPeQ" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a>
+      </div>
+    </div>
+    <form id="form" class="rv">
+      <div class="row">
+        <label>Nome<input name="nome" required autocomplete="given-name"></label>
+        <label>Cognome<input name="cognome" autocomplete="family-name"></label>
+      </div>
+      <label>Email<input type="email" name="email" required autocomplete="email"></label>
+      <label>Mi interessa
+        <select name="tema">
+          <option>Lezione di prova di Yoga</option>
+          <option>Yoga per la terza età</option>
+          <option>Yoga in gravidanza / bambini</option>
+          <option>Dance Well</option>
+          <option>Collaborazione artistica</option>
+          <option>Altro</option>
+        </select>
+      </label>
+      <label>Messaggio<textarea name="msg" required></textarea></label>
+      <button class="btn fill" type="submit">Invia il messaggio</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/logo-sole.png" alt="">Silvia Pipponzi</a>
+    <span>Danzatrice, Yogini &amp; Movement Explorer · © 2026</span>
+  </div>
+</footer>
+
+<script>
+// header solido dopo lo scroll
+const h=document.querySelector('header');
+const onScroll=()=>h.classList.toggle('solid',scrollY>40);
+onScroll();addEventListener('scroll',onScroll,{passive:true});
+
+// menu mobile
+const b=document.querySelector('.burger');
+b.addEventListener('click',()=>{const o=h.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>{h.classList.remove('open');b.setAttribute('aria-expanded',false)}));
+
+// comparsa morbida
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+// il modulo apre il programma di posta (sito statico, niente server)
+document.getElementById('form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=new FormData(e.target);
+  const oggetto=`${f.get('tema')} — ${f.get('nome')} ${f.get('cognome')}`.trim();
+  const corpo=`${f.get('msg')}\n\n${f.get('nome')} ${f.get('cognome')}\n${f.get('email')}`;
+  location.href=`mailto:s.pipponzi15@gmail.com?subject=${encodeURIComponent(oggetto)}&body=${encodeURIComponent(corpo)}`;
+});
+</script>
+</body>
+</html>
